@@ -13,6 +13,11 @@
 #include <fcntl.h>
 #include <cstring>
 #include <unistd.h>
+#include <mutex>
+
+
+extern bool communication_end;
+extern std::mutex mtx_communication_end;
 
 /**
  * @brief Initializes communication with serial port.
@@ -81,6 +86,13 @@ AscSerialIO::start_serial_reading()
 			std::cout << "\n[*] MESSAGE FROM SERIAL DEVICE: " << buf << '\n';
 			std::memset(&buf,0,256); /* Clear buffer. */	
 		}
+		mtx_communication_end.lock();
+		if(communication_end) {
+			mtx_communication_end.unlock();
+			return;
+		}
+		mtx_communication_end.unlock();
+				
 		std::this_thread::sleep_for(50ms); /* Continue */	
 	}
 }

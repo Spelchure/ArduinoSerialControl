@@ -12,11 +12,16 @@
 #include <thread>
 #include <cstring>
 #include <cerrno>
+#include <mutex>
 
 using namespace std;
 
 /* Created pipe file name can be changed here. */
 constexpr auto PIPE_FILENAME = "/tmp/arduinocommand";
+
+/* For closing serial thread safely.*/
+bool communication_end = false;
+std::mutex mtx_communication_end;
 
 int
 main(int argc, char **argv)
@@ -56,6 +61,12 @@ main(int argc, char **argv)
 
 	pipe_thread.join();
 	
+	mtx_communication_end.lock();
+	communication_end = true;
+	mtx_communication_end.unlock();	
+	
+	if(serial_thread.joinable())
+		serial_thread.join();
 
 	if(serial)
 		delete serial;

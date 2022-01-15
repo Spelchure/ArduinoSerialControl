@@ -19,7 +19,7 @@ Tested under:
 - [x] Sending commands to arduino that coming from named pipe. (default */tmp/arduinocommand* ) 
 - [ ] ZMQ sockets support.
 - [ ] JSON processing.
-- [ ] Logging.
+- [ ] Logging support.
 
 
 ## Requirements
@@ -63,4 +63,7 @@ For generating documentation you need [doxygen](https://github.com/doxygen/doxyg
 	doxygen Doxyfile
 
 ## Testing
-	TODO 
+	TODO
+
+## Notes
+User must has permission to access serial port and use ArduinoSerialControl.  

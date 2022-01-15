@@ -1,0 +1,67 @@
+.TH "AscSerialIO" 3 "Sat Jan 15 2022" "Version 0.1" "ArduinoSerialControl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AscSerialIO \- ArduinoSerialControl Serial Input/Output\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <asc_serial_io\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAscSerialIO\fP (char *tty_dev)"
+.br
+.ti -1c
+.RI "\fB~AscSerialIO\fP ()"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "bool \fBinitialize_communication\fP ()"
+.br
+.RI "Initializes communication with serial port\&. "
+.ti -1c
+.RI "void \fBstart_serial_reading\fP ()"
+.br
+.RI "Thread\&. Reads from serial port and prints to screen\&. "
+.ti -1c
+.RI "void \fBsend_to_serial\fP (const char *msg, int size)"
+.br
+.RI "Sends command to serial device\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+ArduinoSerialControl Serial Input/Output\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AscSerialIO::initialize_communication ()"
+
+.PP
+Initializes communication with serial port\&. Makes termios configuration\&. Checks for device is a tty\&. Opens serial device\&. Sets baud rate\&.
+.PP
+\fBReturns\fP
+.RS 4
+true if initialization success\&. 
+.PP
+false if initialization fails\&. 
+.RE
+.PP
+
+.SS "void AscSerialIO::send_to_serial (const char * msg, int size)"
+
+.PP
+Sends command to serial device\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImsg\fP Message to send\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ArduinoSerialControl from the source code\&.

@@ -1,0 +1,46 @@
+.TH "AscPipeIO" 3 "Sat Jan 15 2022" "Version 0.1" "ArduinoSerialControl" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AscPipeIO \- PipeIO\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <asc_pipe_io\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAscPipeIO\fP (const char *const pipe)"
+.br
+.ti -1c
+.RI "bool \fBinitialize_pipe\fP (\fBAscSerialIO\fP *serial)"
+.br
+.RI "Initialize named pipe\&. "
+.ti -1c
+.RI "void \fBstart_pipe_reading\fP ()"
+.br
+.RI "Thread for reading message from named pipe\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+PipeIO\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AscPipeIO::initialize_pipe (\fBAscSerialIO\fP * serial)"
+
+.PP
+Initialize named pipe\&. If named pipefile exist it will be deleted !
+.PP
+\fBParameters\fP
+.RS 4
+\fIserial\fP Serial communication interface\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ArduinoSerialControl from the source code\&.

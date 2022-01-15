@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.6.3)
 
 project(ArduinoSerialControl CXX)
 
-set(ASC_SOURCES src/asc_main.cc)
+set(ASC_SOURCES src/asc_main.cc
+		src/asc_serial_io.cc
+		src/asc_pipe_io.cc)
 
 set(CMAKE_CXX_STANDARD 17)
 set(THREAD_PREFER_PTHREAD_FLAG ON)

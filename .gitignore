@@ -36,3 +36,14 @@ build/*
 
 # Vim swap files
 *.swp
+
+# Not required arduino files
+#arduino-examples/*
+# But ...
+#!arduino-examples/*.cc
+#!arduino-examples/*.sh
+#!arduino-examples/*/build/BoardOptions.cmake
+
+#
+*.drawio
+

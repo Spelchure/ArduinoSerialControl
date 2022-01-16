@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.8)
+
+project(arduino_serial_communication CXX)
+
+add_executable(arduino_serial_communication arduino_serial_communication.cc) 
+
+target_link_arduino_libraries(arduino_serial_communication PRIVATE core)
+
+target_enable_arduino_upload(arduino_serial_communication)
